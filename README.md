@@ -12,12 +12,14 @@ The file [preprocess.m](data_preprocess/preprocess.m) was used to convert raw EE
 
 ## Analyze State-of-the-art algorithms
 
-Next step is to run [analyze_algorithms.ipynb](analyze_algorithms.ipynb) to execute the state-of-the-art machine learning algorithms. All of the results will be stored in [tcr_old_results](tcr_old_results). Please verify that the top two algorithms are Random Forest and RBF SVM. 
+You can run [analyze_algorithms.ipynb](analyze_algorithms.ipynb) to execute the state-of-the-art machine learning algorithms. All of the results will be stored in [tcr_old_results](tcr_old_results). Please verify that the top two algorithms are Random Forest and RBF SVM. 
 
 Side node: It took me around 40 - 50 minutes to finish running [analyze_algorithms.ipynb](analyze_algorithms.ipynb). Running time varies depending on different computers.
 
 ## Time Majority Voting Algorithm
 
-Last, run [Time_majority_voting_algorithm.ipynb](Time_majority_voting_algorithm.ipynb) to execute the TMV algorithm, and all of the results/graphs will be stored in [Time_majority_results](Time_majority_results). Please verify the increase of accuracy comparing to the Random Forest, and you procuced similar graphs in the paper. The link to the paper can be found on the [Research Tasks Forum](https://xiaodongqu.com/viewtopic.php?f=9&t=182&p=757#p757).
+Run [Time_majority_algorithm.ipynb](Time_majority_algorithm.ipynb) to execute the TMV algorithm, and all of the results/graphs will be stored in [Time_majority_results](Time_majority_results). Inside the [Time_majority_results](Time_majority_results) folder, remeber to create a folder named "rwt" and a folder named "tcr". Inside each of these folders, create a folder called "TMV".
 
-Side node: It took me around 10 - 20 minutes to finish running [Time_majority_voting_algorithm.ipynb](Time_majority_voting_algorithm.ipynb). Running time varies depending on different computers.
+Please verify the increase of accuracy comparing to the Random Forest, and you procuced similar graphs in the paper. The link to the paper can be found on the [Research Tasks Forum](https://xiaodongqu.com/viewtopic.php?f=9&t=182&p=757#p757).
+
+Side node: It took me around 10 - 20 minutes to finish running [Time_majority_algorithm.ipynb](Time_majority_algorithm.ipynb). Running time varies depending on different computers.
