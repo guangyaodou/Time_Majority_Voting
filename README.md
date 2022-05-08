@@ -24,6 +24,10 @@ Run [TMV_EEGEyeNet.ipynb](TMV_EEGEyeNet.ipynb) to execute the TMV algorithm on t
 
 Side Note: There are 369 subjects in total. Run time varies based on number of subjects you are going to run.
 
+## Time Majority Voting Algorithm for BCI Competition
+
+Run [TMV_BCI_Competition.py](TMV_BCI_Competition.py) to execute the TMV algorithm on the BCI competiion. You can decide to run which subjects by adjusting the variable "total_subjects"(line 84) and the starting position of the for loop on line 93. Currently, it runs subjects 1 to 5. You can uncomment and comment out the corresponding names and classifiers in the second block to determine what classifiers you want to run. 
+
 ## Time Majority Voting Algorithm for TCR and RWT dataset
 
 Run [Time_majority_algorithm.ipynb](Time_majority_algorithm.ipynb) to execute the TMV algorithm on the TCR and the RWT dataset, and all of the results/graphs will be stored in [Time_majority_results](Time_majority_results). 
