@@ -20,7 +20,7 @@ import random
 from typing import List
 from statistics import mode
 
-data_source = "BCI_Competition"
+data_source = "BCI-Data"
 # KNN LDA SLDA MLP 1.11(1,2,3,4,5,6,7,8) (especially voting classifier)
 names = [
 #         'GradientBoostingRegressor',
@@ -91,7 +91,7 @@ tmv_classifier_record = {}
 print("start running classifiers")
 print("="*20)
 for subject_id in range(1, total_subjects + 1):
-    df = pd.read_csv("First_Five_Data/" + str(subject_id) + "-train.csv", header=None)
+    df = pd.read_csv(data_source + "/" + str(subject_id) + "-train.csv", header=None)
     cols = df.columns.tolist()
     cols = cols[-1:] + cols[:-1]
     df = df[cols]
