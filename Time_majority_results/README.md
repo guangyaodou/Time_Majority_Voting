@@ -1,1 +1,0 @@
-# Time Majority Results 

@@ -1,0 +1,13 @@
+,First Algorithm Used,Second Algorithm Used
+1,RandomForest,RBF SVM
+2,RandomForest,RBF SVM
+3,RandomForest,RBF SVM
+5,RBF SVM,RandomForest
+8,RandomForest,RBF SVM
+9,RandomForest,RBF SVM
+10,RandomForest,RBF SVM
+12,RandomForest,RBF SVM
+13,RandomForest,RBF SVM
+14,RandomForest,RBF SVM
+15,RandomForest,RBF SVM
+17,RBF SVM,RandomForest

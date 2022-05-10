@@ -1,0 +1,7 @@
+,Average Accuracy,Avg code runtime(s)
+TMV,0.8,6.2
+RandomForest,0.55,42.1
+RBF SVM,0.53,30.4
+Nearest Neighbors,0.48,1.8
+Shrinkage LDA,0.42,0.2
+LDA,0.42,0.2

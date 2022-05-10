@@ -33,9 +33,11 @@ If you want to change the name of your dataset folder, you should change the var
 
 ## Time Majority Voting Algorithm for TCR and RWT dataset
 
-Run [Time_majority_algorithm.ipynb](Time_majority_algorithm.ipynb) to execute the TMV algorithm on the TCR and the RWT dataset, and all of the results/graphs will be stored in [Time_majority_results](Time_majority_results). 
+Run [TMV_tcr_rwt.ipynb](TMV_tcr_rwt.ipynb) to execute the TMV algorithm on the TCR and the RWT dataset, and all of the results/graphs will be stored in [Time_Majority_results](Time_majority_results). Currently, [Time_Majority_results](Time_majority_results) has results Gordon generated for tcr dataset. 
 
-Inside the [Time_majority_results](Time_majority_results) folder, remeber to create a folder named "rwt" and a folder named "tcr". Inside each of these folders, create a folder called "TMV". Change the data_source to be either 'rwt' or 'tcr'. You can also decide to run which subjects by adjusting the variables "subject_id_start" and "subject_id_end". You can uncomment and comment out the corresponding names and classifiers in the second block to determine what classifiers you want to run. 
+Inside the [Time_Majority_results](Time_Majority_results) folder, remeber to create a folder named "rwt" and a folder named "tcr". Inside each of these folders, create a folder called "TMV". Change the data_source to be either 'rwt' or 'tcr'. You can also decide to run which subjects by adjusting the variables "subject_id_start" and "subject_id_end". You can uncomment and comment out the corresponding names and classifiers in the second block to determine what classifiers you want to run. 
+
+The TMV folder inside the "rwt" and "tcr" will only display one subject's result, and you can specify that subject by changing the variable "subject_id_search".
 
 Please verify the increase of accuracy comparing to the Random Forest, and you procuced similar graphs in the paper. The link to the paper can be found on the [Research Tasks Forum](https://xiaodongqu.com/viewtopic.php?f=9&t=182&p=757#p757).
 
