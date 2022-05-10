@@ -1,0 +1,7 @@
+,Average_Accuracy,Avg runtime(s)
+RandomForest,0.949,21.097
+TMV,0.938,4.631
+AdaBoostClassifier,0.927,32.278
+sLDA,0.926,0.649
+Decision Tree,0.91,0.163
+LDA,0.909,0.245

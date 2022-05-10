@@ -1,0 +1,17 @@
+,First Algorithm Used,Second Algorithm Used
+1,AdaBoostClassifier,RandomForest
+2,LDA,RandomForest
+4,RandomForest,sLDA
+5,RandomForest,LDA
+6,RandomForest,sLDA
+7,RandomForest,sLDA
+8,RandomForest,Decision Tree
+9,RandomForest,AdaBoostClassifier
+10,AdaBoostClassifier,RandomForest
+11,sLDA,LDA
+12,sLDA,RandomForest
+13,RandomForest,sLDA
+14,RandomForest,AdaBoostClassifier
+16,RandomForest,Decision Tree
+17,RandomForest,LDA
+18,RandomForest,AdaBoostClassifier

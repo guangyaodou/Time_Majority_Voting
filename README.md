@@ -22,6 +22,8 @@ Side node: It took me around 40 - 50 minutes to finish running [analyze_algorith
 
 Run [TMV_EEGEyeNet.ipynb](TMV_EEGEyeNet.ipynb) to execute the TMV algorithm on the EEGEyeNet dataset. You can also decide to run which subjects by adjusting the variable "total_subjects". You can uncomment and comment out the corresponding names and classifiers in the second block to determine what classifiers you want to run. 
 
+The [output/EEGEyeNet](output/EEGEyeNet/) contains results that Gordon generated.
+
 Side Note: There are 369 subjects in total. Run time varies based on number of subjects you are going to run.
 
 ## Time Majority Voting Algorithm for BCI Competition
