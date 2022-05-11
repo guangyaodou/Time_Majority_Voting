@@ -21,16 +21,17 @@ from typing import List
 from statistics import mode
 
 data_source = "BCI-Data"
-# KNN LDA SLDA MLP 1.11(1,2,3,4,5,6,7,8) (especially voting classifier)
+# Gradient Boost, Adabooost, Linear SVM, Decision Tree, sLDA, MLP took very long time to run
+# be cautious before you uncomment these algorithms
 names = [
 #         'GradientBoostingRegressor',
         'LDA',
         'Nearest Neighbors',
 #         'AdaBoostClassifier',
         'RandomForest',
-#         "Linear SVM",
-        "RBF SVM",
-#         "Decision Tree",
+        "Linear SVM",
+#         "RBF SVM",
+        "Decision Tree",
 #         "sLDA",
         # "MLP",
         ]
@@ -42,9 +43,9 @@ classifiers = [
             KNeighborsClassifier(n_neighbors=4),
 #             AdaBoostClassifier(n_estimators=400, learning_rate = 0.6),
             RandomForestClassifier(n_estimators=300, max_features = "sqrt", oob_score = True),
-#             SVC(kernel="linear", C=0.025),
-            SVC(gamma=2, C=1),
-#             DecisionTreeClassifier(),
+            SVC(kernel="linear", C=0.025),
+#             SVC(gamma=2, C=1),
+            DecisionTreeClassifier(),
 #             LinearDiscriminantAnalysis(solver='lsqr', shrinkage='auto'),
 #             MLPClassifier(random_state=1, max_iter=300),
               ]
@@ -81,7 +82,7 @@ def calculate_accuracy(y_one : List, y_two : List) -> float:
 
 
 scoring = "accuracy"
-total_subjects = 5
+total_subjects = 3
 
 score_dict = {}
 time_record = {}
@@ -168,9 +169,10 @@ for subject_id in range(1, total_subjects + 1):
     score_dict[subject_id]["TMV"] = (tmv_accuracy)
     time_record[subject_id]["TMV"] = time_tmv_end - time_tmv_start
 
-    tp_data = {"Average_Accuracy": tmv_accuracy, "Avg runtime(s)": time_tmv_end - time_tmv_start}
-    df_tp = pd.DataFrame(tp_data, index=["TMV"])
-    df_tp.to_csv("output/" + data_source + "/subject " + str(subject_id) + "_TMV_accuracy_time.csv")
+    # Uncomment the following line if you want to see results for each subjects
+    # tp_data = {"Average_Accuracy": tmv_accuracy, "Avg runtime(s)": time_tmv_end - time_tmv_start}
+    # df_tp = pd.DataFrame(tp_data, index=["TMV"])
+    # df_tp.to_csv("output/" + data_source + "/subject " + str(subject_id) + "_TMV_accuracy_time.csv")
 
     print("The time spent to run TMV is", str(time_tmv_end - time_tmv_start))
 
@@ -187,12 +189,8 @@ print("classifier names", y_names)
 subject_ids.sort(key = lambda x : score_dict[x]["RandomForest"][0])
 print(subject_ids)
 
-x_axis = [str(s_id) for s_id in subject_ids]
-plt.figure(figsize=(10, 5))
-fig, ax = plt.subplots()
-
 average_accuracy_recorder = {}
-
+print("y_names", y_names)
 for y_name in y_names:
     y_accuracy = []
     for key in subject_ids:
@@ -202,6 +200,22 @@ for y_name in y_names:
             y_accuracy.append(score_dict[key][y_name][0])
     average_of_y_name = sum(y_accuracy) / float(len(y_accuracy))
     average_accuracy_recorder[y_name] = average_of_y_name
+
+y_names.sort(key = lambda x : -average_accuracy_recorder[x])
+print("sorted y_names", y_names)
+
+x_axis = [str(s_id) for s_id in subject_ids]
+plt.figure(figsize=(10, 5))
+fig, ax = plt.subplots()
+
+for y_name in y_names:
+    y_accuracy = []
+    for key in subject_ids:
+        if y_name == "TMV":
+            y_accuracy.append(score_dict[key][y_name])
+        else:
+            y_accuracy.append(score_dict[key][y_name][0])
+    average_of_y_name = average_accuracy_recorder[y_name]
     ax.plot(x_axis, y_accuracy, marker='D', label = y_name + "("+str(round(average_of_y_name, 2))+")")
 
 ax.set_position([0.1,0.5, 1.2, 1.0])
@@ -247,5 +261,5 @@ for key in tmv_classifier_record:
 
 data_algorithms = {"First Algorithm Used":tmv_algorithm_first, "Second Algorithm Used":tmv_algorithm_second}
 df_2 = pd.DataFrame(data_algorithms, index = ids)
-df_2.to_csv("output/" +data_source+"/classifiers_used_TMV.csv")
+df_2.to_csv("output/"+data_source+"/classifiers_used_TMV.csv")
 print(df_2)

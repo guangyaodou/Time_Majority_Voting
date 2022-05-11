@@ -1,0 +1,7 @@
+,Average_Accuracy,Avg runtime(s)
+Linear SVM,0.889,70.392
+LDA,0.888,65.558
+TMV,0.845,19.398
+RandomForest,0.829,318.308
+Nearest Neighbors,0.816,3.908
+Decision Tree,0.654,142.227
