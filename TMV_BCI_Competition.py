@@ -82,7 +82,7 @@ def calculate_accuracy(y_one : List, y_two : List) -> float:
 
 
 scoring = "accuracy"
-total_subjects = 3
+total_subjects = 9
 
 score_dict = {}
 time_record = {}
@@ -132,9 +132,10 @@ for subject_id in range(1, total_subjects + 1):
         time_elapsed = time_end - time_start
         time_record[subject_id][name] = time_elapsed
 
-        tp_data = {"Average_Accuracy": scores.mean(), "Avg runtime(s)": time_elapsed}
-        df_tp = pd.DataFrame(tp_data, index=[name])
-        df_tp.to_csv("output/" + data_source + "/subject "+str(subject_id)+"_"+name+"_accuracy_time.csv")
+        # Uncomment the following lines if you want to see results for each subject's pre-specified ML algorithms
+        # tp_data = {"Average_Accuracy": scores.mean(), "Avg runtime(s)": time_elapsed}
+        # df_tp = pd.DataFrame(tp_data, index=[name])
+        # df_tp.to_csv("output/" + data_source + "/subject "+str(subject_id)+"_"+name+"_accuracy_time.csv")
 
         print("The average score of " + name + " is", scores.mean(), "with std of", scores.std())
         print("The time spent to run " + name + " is", time_elapsed)
@@ -169,7 +170,7 @@ for subject_id in range(1, total_subjects + 1):
     score_dict[subject_id]["TMV"] = (tmv_accuracy)
     time_record[subject_id]["TMV"] = time_tmv_end - time_tmv_start
 
-    # Uncomment the following line if you want to see results for each subjects
+    # Uncomment the following lines if you want to see results for each subject's TMV result
     # tp_data = {"Average_Accuracy": tmv_accuracy, "Avg runtime(s)": time_tmv_end - time_tmv_start}
     # df_tp = pd.DataFrame(tp_data, index=["TMV"])
     # df_tp.to_csv("output/" + data_source + "/subject " + str(subject_id) + "_TMV_accuracy_time.csv")

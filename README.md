@@ -22,18 +22,18 @@ Side node: It took me around 40 - 50 minutes to finish running [analyze_algorith
 
 Run [TMV_EEGEyeNet.ipynb](TMV_EEGEyeNet.ipynb) to execute the TMV algorithm on the EEGEyeNet dataset. You can also decide to run which subjects by adjusting the variable "total_subjects". You can uncomment and comment out the corresponding names and classifiers in the second block to determine what classifiers you want to run. 
 
-The [output/EEGEyeNet](output/EEGEyeNet/) contains example results.
+The [output/EEGEyeNet](output/EEGEyeNet/) contains example results for the first 18 subjects.
 
 Side Note: There are 369 subjects in total. Run time varies based on number of subjects you are going to run.
 
 ## Time Majority Voting Algorithm for BCI Competition
 The first step is to download the dataset from this [google drive](https://drive.google.com/drive/u/0/folders/1H-JAAqDg-2NwOyvTm4l1OuRgp6X0zOpB); the folder is called BCI-Data. You should put this folder in the same directory as your TMV_BCI_Competition.py file. Then, you should create a new folder called "output" and in this folder create another empty folder named "BCI-Data". 
 
-Run [TMV_BCI_Competition.py](TMV_BCI_Competition.py) to execute the TMV algorithm on the BCI competition. You can decide to run which subjects by adjusting the variable "total_subjects"(line 84) and the starting position of the for loop on line 93. Currently, it runs subjects 1 to 5. You can uncomment and comment out the corresponding names and classifiers in the second block to determine what classifiers you want to run. 
+Run [TMV_BCI_Competition.py](TMV_BCI_Competition.py) to execute the TMV algorithm on the BCI competition dataset. You can decide to run which subjects by adjusting the variable "total_subjects" and the starting position of the for loop on line 94. Currently, it runs subjects 1 to 5. You can uncomment and comment out the corresponding names and classifiers in the second block to determine what classifiers you want to run. 
 
 If you want to change the name of your dataset folder, you should change the variable "data_source" (line 23) to the new name. Also, you need to change the name of the folder you created inside the output folder, where the results will be stored, to the new name.
 
-The [output/BCI-Data](output/BCI-Data/) contains example results.
+The [output/BCI-Data](output/BCI-Data/) contains example results for all nine subjects' training datasets.
 
 ## Time Majority Voting Algorithm for TCR and RWT dataset
 
