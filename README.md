@@ -20,15 +20,15 @@ Side node: It took me around 40 - 50 minutes to finish running [analyze_algorith
 
 ## Time Majority Voting Algorithm for EEGEyeNet
 
-Note: the first four bullet points will guide you to download the dataset and reformat it as a CSV file with the format we planned our code on. If you face difficulties with these steps or want to skip them, contact the authors, and they will send you the CSV file directly to start from the fifth bullet point.
+**Note**: the first four bullet points will guide you to download the dataset and reformat it as a CSV file with the format we planned our code on. If you face difficulties with these steps or want to skip them, contact the authors, and they will send you the CSV file directly to start from the fifth bullet point.
 
-1 - To get the data into the expected format for our code to run properly, first, you should go to this link https://github.com/ardkastrati/EEGEyeNet, download this GitHub repository on your device, and add the file [process_eegeye.py], which you can find in our code folder, and an empty folder named **data**  to the folder you just downloaded from the GitHub. 
+1 - To get the data into the expected format for our code to run properly, first, you should go to this link https://github.com/ardkastrati/EEGEyeNet, download this GitHub repository on your device, and add the file (process_eegeye.py), which you can find in our code folder, to the folder you just downloaded from the GitHub. Add an empty folder named **data** to the same folder. 
 
-2 - Next, go to this link: https://osf.io/ktv7m/. There, you will find two folders, the first of which is named "Dropbox: EEGEyeNet." If this first folder has a (+) sign next to it, click on the (+) sign. Otherwise, go to the next step directly. 
+2 - Next, go to this link: https://osf.io/ktv7m/. There, on the left, you will find two folders, the first of which is named "Dropbox: EEGEyeNet." If this first folder has a (+) sign next to it, click on the (+) sign. Otherwise, go to the next step directly. 
 
-3 - Now, you should see four folders popped up. Open the folder named **Prepared** (Click the + sign next to the folder named "prepared"). When you do that, you will see many files showing up. Scroll down till you see four files that start with "LR_task_with", download the last one of them on your device, and then move it to the **data** folder you just created above.
+3 - Now, you should see four folders pop up. Open the folder named **Prepared** (Click the + sign next to the folder named "prepared"). When you do that, you will see many files showing up. Scroll down till you see four files that start with "LR_task_with", download the last one of them on your device, and then move it to the **data** folder you just created above.
 
-4 - Run the [process_eegeye.py]. After the code finishes running, you should see a new CSV file created in the same directory named **EEGEyeNet-data.csv**.
+4 - Run the (process_eegeye.py). After the code finishes running, you should see a new CSV file created in the same directory named **EEGEyeNet-data.csv**.
 
 5 - Now, put the CSV file, which you just generated, in our coding directory, where the [README.md] and all other TMV files exist. Then, Run [TMV_EEGEyeNet.ipynb](TMV_EEGEyeNet.ipynb) to execute the TMV algorithm on the EEGEyeNet dataset. You can also decide to run which subjects by adjusting the variables "start_subject" and "end_subject." You can uncomment and comment out the corresponding names and classifiers in the second block to determine what classifiers you want to run. 
 
