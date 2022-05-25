@@ -20,11 +20,24 @@ Side node: It took me around 40 - 50 minutes to finish running [analyze_algorith
 
 ## Time Majority Voting Algorithm for EEGEyeNet
 
-Run [TMV_EEGEyeNet.ipynb](TMV_EEGEyeNet.ipynb) to execute the TMV algorithm on the EEGEyeNet dataset. You can also decide to run which subjects by adjusting the variable "total_subjects". You can uncomment and comment out the corresponding names and classifiers in the second block to determine what classifiers you want to run. 
+Note: the first four bullet points will guide you to download the dataset and reformat it as a CSV file with the format we planned our code on. If you face difficulties with these steps or want to skip them, contact the authors, and they will send you the CSV file directly to start from the fifth bullet point.
 
-The [output/EEGEyeNet](output/EEGEyeNet/) contains example results for all subjects in json format.
+- To get the data into the expected format for our code to properly, first, you should go to this link https://github.com/ardkastrati/EEGEyeNet, download this GitHub repository on your device, and add the file [process_eegeye.py], which you can find in our code folder, and an empty folder named **data**  to the folder you just downloaded from the GitHub. 
 
-Side Note: There are 369 subjects in total. Run time varies based on number of subjects you are going to run.
+- Next, go to this link: https://osf.io/ktv7m/. There, you will find two folders, the first of which is named "Dropbox: EEGEyeNet." If this first folder has a (+) sign next to it, click on the (+) sign. Otherwise, go to the next step directly. 
+
+- Now, you should see four folders popped up. Open the folder named **Prepared** (Click the + sign next to the folder named "prepared"). When you do that, you will see many files showing up. Scroll down till you see four files that start with "LR_task_with", download the last one of them on your device, and then move it to the **data** folder you just created above.
+
+- Run the [process_eegeye.py]. After the code finishes running, you should see a new CSV file created in the same directory named **EEGEyeNet-data.csv**.
+
+- Now, put the CSV file, which you just generated, in our coding directory, where the [README.md] and all other TMV files exist. Then, Run [TMV_EEGEyeNet.ipynb](TMV_EEGEyeNet.ipynb) to execute the TMV algorithm on the EEGEyeNet dataset. You can also decide to run which subjects by adjusting the variables "start_subject" and "end_subject." You can uncomment and comment out the corresponding names and classifiers in the second block to determine what classifiers you want to run. 
+
+- Once the code finishes running, you should go to the (EEGEyeNet_analysis) folder and check the (output) folder inside. In the (output) folder, you will see a JSON file that includes all accuracies and standard deviations for all algorithms applied to all subjects. (You don't need to do anything with the file, take a look if you are curious)
+
+- Go back to the (EEGEyeNet_analysis) folder, and run [EEGEyeNet_analysis.py] to generate the two plots and the 3 CSV files that document the results in our paper. All plots and files will be generated in the same directory. So, once generated, you should access them easily.
+
+
+Side Note: There are 369 subjects in total. Run time varies based on the number of subjects you are going to run.
 
 ## Time Majority Voting Algorithm for BCI Competition
 The first step is to download the dataset from this [google drive](https://drive.google.com/drive/u/0/folders/1H-JAAqDg-2NwOyvTm4l1OuRgp6X0zOpB); the folder is called BCI-Data. You should put this folder in the same directory as your TMV_BCI_Competition.py file. Then, you should create a new folder called "output" and in this folder create another empty folder named "BCI-Data". 
