@@ -50,12 +50,14 @@ The [output/BCI-Data](output/BCI-Data/) contains example results for all nine su
 
 ## Time Majority Voting Algorithm for TCR and RWT dataset
 
-Run [TMV_tcr_rwt.ipynb](TMV_tcr_rwt.ipynb) to execute the TMV algorithm on the TCR and the RWT dataset, and all of the results/graphs will be stored in [Time_Majority_results](Time_Majority_results). Currently, [Time_Majority_results/tcr](Time_Majority_results/tcr/) has example results generated for the TCR dataset. 
+1. First, upzip the data folder and put the data folder in the same directory as the [TMV_TCR_RWT.ipynb](TMV_TCR_RWT.ipynb) file. 
 
-Inside the [Time_Majority_results](Time_Majority_results) folder, remeber to create a folder named "rwt" and a folder named [tcr](Time_Majority_results/tcr/). Inside each of these folders, create a folder called "TMV" (such as [Time_Majority_results/tcr/TMV](Time_Majority_results/tcr/TMV/)). Change the data_source to be either 'rwt' or 'tcr'. You can also decide to run which subjects by adjusting the variables "subject_id_start" and "subject_id_end". You can uncomment and comment out the corresponding names and classifiers in the second block to determine what classifiers you want to run. 
+2. You should create a folder called [Time_Majority_results](Time_Majority_results) and put the [Time_Majority_results](Time_Majority_results) in the same directory as the [TMV_TCR_RWT.ipynb](TMV_TCR_RWT.ipynb) file. “Time_Majority_results” will store all the outputs from the [TMV_TCR_RWT.ipynb](TMV_TCR_RWT.ipynb). Then, you should create two new folders called "tcr"  and “rwt” in the folder [Time_Majority_results](Time_Majority_results). Then, create a new folder called “TMV” inside each of the “tcr” and the “rwt” folders. 
 
-The TMV folder inside the "rwt" and "tcr" will only display one subject's result, and you can specify that subject by changing the variable "subject_id_search".
+3. In the second block, change the “data_source” to the name of the datasets you want to experiment on (the default is “tcr”; you can change it to “rwt” to run the RWT dataset). 
 
-Please verify the increase of accuracy comparing to the Random Forest, and you procuced similar graphs in the paper. The link to the paper can be found on the [Research Tasks Forum](https://xiaodongqu.com/viewtopic.php?f=9&t=182&p=757#p757).
+4. You can also modify the variables “subject_id_start” and the “subject_id_end” to determine which subject to start and end running the TMV. The minimum value for “subject_id_start” is 1, and the maximum value for “subject_id_end” is 17 for the TCR dataset and 14 for the RWT dataset. The results will be in the [Time_Majority_results/tcr](Time_Majority_results/tcr/) or [Time_Majority_results/rwt](Time_Majority_results/rwt/) depending on the dataset you run on.
 
-Side node: It took me around 10 - 20 minutes to finish running [TMV_tcr_rwt.ipynb](TMV_tcr_rwt.ipynb). Running time varies depending on different computers.
+5. Next, you can adjust “subject_id_search,” representing the subject id you want to generate the TMV results. This will generate the visualization of the subject’s task 1’s graph for all six sessions and the heatmap of the TMV prediction. These graphs will be generated inside the [Time_Majority_results/tcr/TMV](Time_Majority_results/tcr/TMV/) or [Time_Majority_results/rwt/TMV](Time_Majority_results/rwt/TMV/) depending on the dataset you run on.
+
+Side node: It took me around 10 - 20 minutes to finish running [Time_Majority_results/rwt/TMV](Time_Majority_results/rwt/TMV/). Running time varies depending on different computers.
