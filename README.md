@@ -23,15 +23,24 @@ Time Majority Voting is a new algorithm that can better predict EEG datasets.
 Side Note: There are 369 subjects in total. Run time varies based on the number of subjects you are going to run.
 
 ## Time Majority Voting Algorithm for BCI Competition
-1. ** ABDEL PUT THE PREPROCESSING INSTRUCTIONS HERE **
 
-2. Then, create a folder called "BCI-Data" and move the 18 train and test .csv files mentioned above into this folder. You should put this folder in the same directory as your TMV_BCI_Competition.py file. Then, you should create a new folder called "output" in the same directory, and inside this "output" folder, create another empty folder named "BCI-Data".
+1. First, go to the [BCI Competition Dataset IV 2a Website](https://www.bbci.de/competition/iv/#dataset2a). On this page, scroll down to the **Download of data sets** section and add your name and email. You will then get an email with a link, user, and password. If you don't see it, check the spam folder. The title of the email should be **BCI Competition IV - data set request**.
 
-3. Run [TMV_BCI_Competition.py](TMV_BCI_Competition.py) to execute the TMV algorithm on the BCI competition dataset. You can decide to run which subjects by adjusting the variable "total_subjects" on line 85 and the starting position of the for loop on line 94. Currently, the code runs subjects 1 to 9. You can uncomment and comment out the corresponding names and classifiers in the two lists in lines 26 to 51 to determine what classifiers you want to run. Currently, the code runs LDA, Nearest Neighbors, Random Forest, Linear SVM, and Decision Tree, and then performs TMV on the two best algorithms.
+2. Open the link in this email and use the user and password to open the site. Go to the section named **Data Sets 2** and click on the download link next to the first bullet point (Data sets 2a). After you click the link, a zip file including matlab data files should be downloaded on your device. It's worth mentioning that Google may block you from downloading the file; so, you may have to change your google premissions or use another browser.
 
-4. If you want to change the name of your dataset folder, you should change the variable "data_source" (line 23) to the new name. What's more, note that you also need to change the name of the folder you created inside the output folder, where the results will be stored, to the new name.
+3. Once you get the zip file downloaed, unzip it, copy all the files and go to the folder called "BCI-extraction" which you wil found in our code folder. In that folder, open the folder "dataset" and paste all the files you had there.
 
-5. The [output/BCI-Data](output/BCI-Data/) contains example results for all nine subjects' training datasets.
+4. Then, run [feature_extraction.py](BCI-extraction/feature_extraction.py). This will generate 18 .npy files (two for each subject) in the "BCI-extraction" directory.
+
+5. After you see all 18 .npy files in your "BCI-extraction" directory, run [preprocess_bci.py](BCI-extraction/preprocess_bci.py). This will generate another 18 .csv files (one train.csv and one test.csv for each subject) in the "BCI-extraction" directory.
+
+6. Then, create a folder called "BCI-Data" in the same directory as your TMV_BCI_Competition.py file and move the 18 train and test .csv files mentioned above into this folder. You should put this folder in the same directory as your TMV_BCI_Competition.py file. Then, you should create a new folder called "output" in the same directory, and inside this "output" folder, create another empty folder named "BCI-Data".
+
+7. Run [TMV_BCI_Competition.py](TMV_BCI_Competition.py) to execute the TMV algorithm on the BCI competition dataset. You can decide to run which subjects by adjusting the variable "total_subjects" on line 85 and the starting position of the for loop on line 94. Currently, the code runs subjects 1 to 9. You can uncomment and comment out the corresponding names and classifiers in the two lists in lines 26 to 51 to determine what classifiers you want to run. Currently, the code runs LDA, Nearest Neighbors, Random Forest, Linear SVM, and Decision Tree, and then performs TMV on the two best algorithms.
+
+8. If you want to change the name of your dataset folder, you should change the variable "data_source" (line 23) to the new name. What's more, note that you also need to change the name of the folder you created inside the output folder, where the results will be stored, to the new name.
+
+9. The [output/BCI-Data](output/BCI-Data/) contains example results for all nine subjects' training datasets.
 
 ## Time Majority Voting Algorithm for TCR and RWT dataset
 
