@@ -40,13 +40,15 @@ Side node: It took me around 40 - 50 minutes to finish running [analyze_algorith
 Side Note: There are 369 subjects in total. Run time varies based on the number of subjects you are going to run.
 
 ## Time Majority Voting Algorithm for BCI Competition
-The first step is to download the dataset from this [google drive](https://drive.google.com/drive/u/0/folders/1H-JAAqDg-2NwOyvTm4l1OuRgp6X0zOpB); the folder is called BCI-Data. You should put this folder in the same directory as your TMV_BCI_Competition.py file. Then, you should create a new folder called "output" and in this folder create another empty folder named "BCI-Data". 
+1. ** ABDEL PUT THE PREPROCESSING INSTRUCTIONS HERE **
 
-Run [TMV_BCI_Competition.py](TMV_BCI_Competition.py) to execute the TMV algorithm on the BCI competition dataset. You can decide to run which subjects by adjusting the variable "total_subjects" and the starting position of the for loop on line 94. Currently, it runs subjects 1 to 5. You can uncomment and comment out the corresponding names and classifiers in the second block to determine what classifiers you want to run. 
+2. Then, create a folder called "BCI-Data" and move the 18 train and test .csv files mentioned above into this folder. You should put this folder in the same directory as your TMV_BCI_Competition.py file. Then, you should create a new folder called "output" in the same directory, and inside this "output" folder, create another empty folder named "BCI-Data".
 
-If you want to change the name of your dataset folder, you should change the variable "data_source" (line 23) to the new name. Also, you need to change the name of the folder you created inside the output folder, where the results will be stored, to the new name.
+3. Run [TMV_BCI_Competition.py](TMV_BCI_Competition.py) to execute the TMV algorithm on the BCI competition dataset. You can decide to run which subjects by adjusting the variable "total_subjects" on line 85 and the starting position of the for loop on line 94. Currently, the code runs subjects 1 to 9. You can uncomment and comment out the corresponding names and classifiers in the two lists in lines 26 to 51 to determine what classifiers you want to run. Currently, the code runs LDA, Nearest Neighbors, Random Forest, Linear SVM, and Decision Tree, and then performs TMV on the two best algorithms.
 
-The [output/BCI-Data](output/BCI-Data/) contains example results for all nine subjects' training datasets.
+4. If you want to change the name of your dataset folder, you should change the variable "data_source" (line 23) to the new name. What's more, note that you also need to change the name of the folder you created inside the output folder, where the results will be stored, to the new name.
+
+5. The [output/BCI-Data](output/BCI-Data/) contains example results for all nine subjects' training datasets.
 
 ## Time Majority Voting Algorithm for TCR and RWT dataset
 
